@@ -20,11 +20,13 @@ function App() {
     .every((letter) => guess.includes(letter));
   const isGameLost = wrongGuessCount >= languages.length - 1;
   const isGameOver = isGameWon || isGameLost;
+  const isLastGuessIncorrect =
+    guess[guess.length - 1] && !currentWord.includes(guess[guess.length - 1]);
 
   // INIT - Static values
   const alphabet = "abcdefghijklmnopqrstuvwxyz";
 
-  const langButtons = languages.map((lang, index) => {
+  const langChips = languages.map((lang, index) => {
     return (
       <Chips
         key={lang.name}
@@ -56,6 +58,7 @@ function App() {
       <button
         key={letter}
         className={className}
+        disabled={isGameOver}
         onClick={() => addGuess(letter)}
       >
         {letter.toUpperCase()}
@@ -66,8 +69,14 @@ function App() {
   return (
     <main>
       <Header />
-      <Status gameWon={isGameWon} gameLost={isGameLost} status={isGameOver} />
-      <section className="language-chips">{langButtons}</section>
+      <Status
+        gameWon={isGameWon}
+        gameLost={isGameLost}
+        status={isGameOver}
+        wrong={wrongGuessCount}
+        lastGuess={isLastGuessIncorrect}
+      />
+      <section className="language-chips">{langChips}</section>
       <Word word={letterElements} guess={guess} />
       <section className="keyboard">{keyboard}</section>
       {isGameOver ? <button className="new-game">New Game</button> : null}
