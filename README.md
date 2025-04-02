@@ -1,12 +1,40 @@
-# React + Vite
+# 🔠 Hangman: Programming Languages Edition  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Hangman is a word-guessing game with a programming twist! Try to guess the word before all programming languages are eliminated. Each incorrect guess removes a language from the list, and the game ends when either the word is fully guessed or **only "Assembly" remains**.  
 
-Currently, two official plugins are available:
+## 📖 Learning Journey  
+This project was built while following [Scrimba's Learn React Course](https://scrimba.com/learn-react-c0e).  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🎮 Features  
+- **Random word generation** for each game.  
+- **Track correct and incorrect guesses** dynamically.  
+- **Programming language elimination** with each wrong guess.  
+- **Win** by guessing the word before running out of guesses!  
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack  
+- **Frontend:** React, HTML, CSS, JavaScript  
+- **State Management:** React Hooks (`useState`, `useEffect`)
+- **Packages:** clsx, React Confetti
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🎯 How It Works  
+1. A **random word** is selected at the start.  
+2. Players **guess letters** by clicking on the virtual keyboard.  
+3. **Correct letters** are revealed in the word.  
+4. **Wrong guesses** remove programming languages from the list.  
+5. The game ends when:  
+   - The word is **fully guessed** → 🎉 You Win!  
+   - Only **Assembly remains** → ❌ You Lose!  
+
+## 📦 Installation & Setup  
+1. **Clone the repository:**  
+   ```sh
+   git clone https://github.com/calvinbayaua/Hangman-Game.git  
+   cd Hangman-Game
+2. **Install dependencies:**  
+   ```sh
+   npm install
+   ```
+3. **Start the development server:**  
+   ```sh
+   npm run dev
+   ```
